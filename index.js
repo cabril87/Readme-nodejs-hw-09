@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 
+
 const generateMarkdown = require('./utils/generateMarkdown');
 
 
@@ -38,8 +39,9 @@ inquirer
         name: 'contributors',
       },
       {
-        type: 'input',
+        type: 'list',
         message: 'What license did you use for this app?',
+        choices: ["Apache","MIT", "Boost", "BSD"],
         name: 'license',
       },
       {
@@ -60,7 +62,7 @@ inquirer
     ])
     .then((data) => {
         
-        fs.writeFile(`readme.md`, generateMarkdown(data), (err) =>
+        fs.writeFile(`readmeDemo.md`, generateMarkdown(data), (err) =>
         err ? console.error(err) : console.log('Thank you!')
       )});
 

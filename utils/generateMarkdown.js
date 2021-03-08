@@ -13,6 +13,7 @@
 // TODO: Create a function to generate markdown for README
 
 
+
 function generateMarkdown(data) {
   return `
   
@@ -24,19 +25,19 @@ function generateMarkdown(data) {
 
   ## Table of contents
 
-  *[Description](#description)
-  *[Installation](#installation)
-  *[Usage](#usage)
-  *[License](#license)
-  *[Contributors](#contributors)
-  *[Test](#test)
-  *[Questions](#questions)
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributors](#contributors)
+  * [Test](#test)
+  * [Questions](#questions)
 
   ## Descriptions
 
   ${data.description}
 
-  ##Installation
+  ## Installation
   ${data.installation}
 
   ## Usage
@@ -45,16 +46,19 @@ function generateMarkdown(data) {
 
   ## License 
 
-  This repository is licensed under ${data.license}
+  This repository is licensed under ${data.license}.
 
-  ##Test 
-
+  
+  ## Test 
+  
   ${data.test}
+  
+  ## Questions
+  
+  If you have any questions, contact me at ${data.email} or at my (https://github.com/${data.github}).
 
-  ##Questions
-
-  If you have any questions, contact me at ${data.email} or at my Github ${data.github}.
-
+  
+  [![Git-hub License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://img.shields.io/github/license/<Github-${data.github}>/Readme-nodejs-hw-09<>)
 `;}
 
 module.exports = generateMarkdown;
